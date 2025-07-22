@@ -23,11 +23,11 @@
   <div class="mid">
 <div class="input-box">
   <div class="img-flex">
-    <i class="fa-solid fa-file fa" style="color: green;"></i>
+    <i class="fa-solid fa-file fa" ></i>
   </div>
-    <p style="text-decoration: line-through; color: green;">Brush my teeth</p>
+    <p>Brush my teeth</p>
   <div class="twin">
-    <div><i class="fa-solid fa-circle-check fa" style="color: green;"></i></div>
+ <div><i class="fa-solid fa-circle-check fa" onclick="markDone(this)"></i></div>
     <div><i class="fa-solid fa-trash fa"></i></div>
   </div>
 </div>
@@ -38,7 +38,7 @@
   </div>
     <p>Make breakfast for myself</p>
   <div class="twin">
-    <div><i class="fa-solid fa-circle-check fa"></i></div>
+    <div><i class="fa-solid fa-circle-check fa" onclick="markDone(this)"></i></div>
     <div><i class="fa-solid fa-trash fa"></i></div>
   </div>
 </div>
@@ -54,13 +54,27 @@
 </div>
 
 <script>
-  function Myfunc(button){
-    const colour=window.getComputedStyle(button).color;
-    const text=document.querySelector('.p');
-    if(colour==='black'){
-     text.style.color='green';
-    }
+
+function markDone(icon) {
+  const inputBox = icon.closest('.input-box');
+  const taskText = inputBox.querySelector('p');
+  const fileIcon = inputBox.querySelector('.img-flex i');
+  const currentColor = window.getComputedStyle(icon).color;
+
+  if (currentColor === 'rgb(202, 200, 200)') {
+    icon.style.color = 'green';
+    taskText.style.color = 'green';
+    taskText.style.textDecoration = 'line-through';
+    fileIcon.style.color = 'green';
+  } else {
+    icon.style.color = 'rgb(202, 200, 200)';
+    taskText.style.color = 'black';
+    taskText.style.textDecoration = 'none';
+    fileIcon.style.color = 'rgb(202, 200, 200)';
   }
+}
+
+
 </script>
     
 </body>
