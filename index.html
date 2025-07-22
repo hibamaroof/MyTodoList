@@ -13,7 +13,7 @@
 <body>
     <div class="app-container">
     <div class="todo-container">
-  <h4 id="heading"> MyTodo List</h4>
+  <h1 id="heading"> MyTodo List</h1>
 
   <div class="input-box">
     <input type="text" id="task" placeholder="Enter a Task">
@@ -23,11 +23,11 @@
   <div class="mid">
 <div class="input-box">
   <div class="img-flex">
-    <i class="fa-solid fa-file fa"></i>
+    <i class="fa-solid fa-file fa" style="color: green;"></i>
   </div>
-    <p>Brush my teeth</p>
+    <p style="text-decoration: line-through; color: green;">Brush my teeth</p>
   <div class="twin">
-    <div><i class="fa-solid fa-circle-check fa"></i></div>
+    <div><i class="fa-solid fa-circle-check fa" style="color: green;"></i></div>
     <div><i class="fa-solid fa-trash fa"></i></div>
   </div>
 </div>
@@ -43,20 +43,25 @@
   </div>
 </div>
   
-    <!-- <img class="midIcon" src="assets\icon1.png">
-    <p>Empty Todo List</p> -->
   </div>
-  <footer>
+
   <div class="foot-box">
     <h5>Total Tasks: 0</h5>
     <button class="del">Delete</button>
   </div>
-  </footer>
-
 
 </div>
 </div>
 
+<script>
+  function Myfunc(button){
+    const colour=window.getComputedStyle(button).color;
+    const text=document.querySelector('.p');
+    if(colour==='black'){
+     text.style.color='green';
+    }
+  }
+</script>
     
 </body>
 </html>
