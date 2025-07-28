@@ -1,81 +1,62 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>To-do List</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://kit.fontawesome.com/fa340a510f.js" crossorigin="anonymous"></script>
-    <script src='main.js'></script>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>To-do List</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/fa340a510f.js" crossorigin="anonymous"></script>
+  <script src='main.js'></script>
 </head>
+
 <body>
-    <div class="app-container">
+  <div class="app-container">
     <div class="todo-container">
-  <h1 id="heading"> MyTodo List</h1>
+      <h1 id="heading"> MyTodo List</h1>
 
-  <div class="input-box">
-    <input type="text" id="task" placeholder="Enter a Task">
-    <button class="add">Add</button>
+
+      <div class="first-box">
+        <input type="text" id="task" placeholder="Enter a Task">
+        <button class="add" id="addBtn">Add</button>
+      </div>
+
+      <div class="mid">
+        <!-- <div class="input-box">
+          <div class="img-flex">
+            <i class="fa-solid fa-file fa"></i>
+          </div>
+          <p>Brush my teeth</p>
+          <div class="twin">
+            <div><i class="fa-solid fa-circle-check fa" onclick="markDone(this)"></i></div>
+            <div><i class="fa-solid fa-trash fa"></i></div>
+          </div>
+        </div>
+
+        <div class="input-box">
+          <div class="img-flex">
+            <i class="fa-solid fa-file fa"></i>
+          </div>
+          <p>Make breakfast for myself</p>
+          <div class="twin">
+            <div><i class="fa-solid fa-circle-check fa" onclick="markDone(this)"></i></div>
+            <div><i class="fa-solid fa-trash fa"></i></div>
+          </div>
+        </div> -->
+
+      </div>
+
+      <div class="foot-box">
+        <h5 id="total">Total Tasks: 0</h5>
+        <button class="del" onclick="deleteAll()">Delete </button>
+      </div>
+
+    </div>
   </div>
-  
-  <div class="mid">
-<div class="input-box">
-  <div class="img-flex">
-    <i class="fa-solid fa-file fa" ></i>
-  </div>
-    <p>Brush my teeth</p>
-  <div class="twin">
- <div><i class="fa-solid fa-circle-check fa" onclick="markDone(this)"></i></div>
-    <div><i class="fa-solid fa-trash fa"></i></div>
-  </div>
-</div>
 
-<div class="input-box">
-  <div class="img-flex">
-    <i class="fa-solid fa-file fa"></i>
-  </div>
-    <p>Make breakfast for myself</p>
-  <div class="twin">
-    <div><i class="fa-solid fa-circle-check fa" onclick="markDone(this)"></i></div>
-    <div><i class="fa-solid fa-trash fa"></i></div>
-  </div>
-</div>
-  
-  </div>
-
-  <div class="foot-box">
-    <h5>Total Tasks: 0</h5>
-    <button class="del">Delete</button>
-  </div>
-
-</div>
-</div>
-
-<script>
-
-function markDone(icon) {
-  const inputBox = icon.closest('.input-box');
-  const taskText = inputBox.querySelector('p');
-  const fileIcon = inputBox.querySelector('.img-flex i');
-  const currentColor = window.getComputedStyle(icon).color;
-
-  if (currentColor === 'rgb(202, 200, 200)') {
-    icon.style.color = 'green';
-    taskText.style.color = 'green';
-    taskText.style.textDecoration = 'line-through';
-    fileIcon.style.color = 'green';
-  } else {
-    icon.style.color = 'rgb(202, 200, 200)';
-    taskText.style.color = 'black';
-    taskText.style.textDecoration = 'none';
-    fileIcon.style.color = 'rgb(202, 200, 200)';
-  }
-}
-
-
-</script>
-    
+  <script src="index.js"></script>
 </body>
+
 </html>
