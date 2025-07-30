@@ -1,19 +1,21 @@
 body {
-  color: rgba(0, 0, 0, 0.87);
+
   font-family: Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 400;
   font-size: 1rem;
 
 }
 
+
+
 .app-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   padding: 0;
   margin-top: 0;
   width: auto;
-  min-height: 97vh;
+  min-height: 96vh;
   max-height: 97vh;
 
 }
@@ -22,12 +24,13 @@ body {
   display: flex;
   flex-direction: column;
   background-color: rgb(228, 232, 232);
-  height: 97vh;
+  height: 96vh;
   max-width: 100%;
   /* min-width: 250px; */
   padding: 0 1rem 1rem 1rem;
   align-items: center;
-  width: 550px;
+  width: 500px;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
 
 }
 
@@ -56,10 +59,33 @@ body {
   max-height: 35px;
 }
 
+.input-box:hover {
+  border: 1px solid rgb(154, 154, 156);
+}
+
 /* .cont {
     width: 70%;
     height: 6px;
 } */
+
+.fa-circle-check,
+.fa-trash,
+.fa-pen-to-square {
+  cursor: pointer;
+}
+
+.fa-circle-check:hover {
+  color: gray;
+}
+
+.fa-trash:hover {
+  color: gray;
+}
+
+.fa-pen-to-square:hover {
+  color: gray;
+}
+
 
 #task {
   outline: none;
@@ -68,6 +94,7 @@ body {
   font-size: large;
   outline-color: transparent;
   border: none;
+  background-color: transparent;
 }
 
 .add {
@@ -81,18 +108,24 @@ body {
   cursor: pointer;
 }
 
+.add:hover {
+  transform: scale(1.03);
+  background-color: rgb(19, 90, 161);
+}
+
 .twin {
   display: flex;
   display: row;
-  gap: 1.5rem;
-  max-width: 80%;
+  gap: 1rem;
+  max-width: 90%;
 }
 
 .input-box p {
   width: 70%;
   white-space: nowrap;
   max-width: 100%;
-  overflow: hidden;
+  overflow: auto;
+
 
 }
 
@@ -116,7 +149,7 @@ body {
 }
 
 .fa {
-  color: rgb(202, 200, 200);
+  color: rgb(154, 152, 152);
   font-size: larger;
 
 }
@@ -129,6 +162,7 @@ body {
   height: 40rem;
   /* min-width: 220px; */
   width: 100%;
+  overflow: auto;
 }
 
 .midIcon {
@@ -170,11 +204,17 @@ body {
   cursor: pointer;
 }
 
+.del:hover {
+  transform: scale(1.03);
+  background-color: rgb(124, 30, 30);
+}
+
 .img-flex {
   border-radius: 50%;
-  background-color: gray;
+
   padding: .7rem;
   margin-right: 3%;
+  margin-bottom: 2%;
   width: 1rem;
   height: 1rem;
   position: relative;
@@ -184,4 +224,87 @@ body {
 .completed {
   text-decoration: line-through;
   color: green;
+}
+
+.darkBody {
+  background-color: black;
+
+  .todo-container {
+    background-color: rgb(92, 93, 100);
+  }
+
+  #heading {
+    color: white;
+  }
+
+  .foot-box {
+    background-color: rgb(163, 166, 179);
+  }
+
+  .input-box {
+    background-color: rgb(182, 183, 189);
+  }
+
+  .first-box {
+    background-color: rgb(186, 187, 193);
+  }
+
+  .fa {
+    color: white;
+  }
+
+  .checkbox-label {
+    background-color: #403f3f;
+  }
+
+  .input-box:hover {
+    border: 1px solid rgb(118, 108, 132);
+  }
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: #b7b0b0;
+  width: 40px;
+  height: 18px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 5px;
+
+}
+
+.fa-moon {
+  color: #ebc73a;
+}
+
+.fa-sun {
+  color: #f3cd38;
+}
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked+.checkbox-label .ball {
+  transform: translateX(24px);
+}
+
+.icon-completed {
+  color: green !important;
 }

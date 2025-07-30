@@ -13,7 +13,18 @@
 </head>
 
 <body>
+
+
   <div class="app-container">
+    <!-- <button class="blackB" onclick="darkMode()">Black</button> -->
+       <div>
+    <input type="checkbox" class="checkbox" id="checkbox">
+    <label for="checkbox" class="checkbox-label">
+      <i class="fas fa-moon"></i>
+      <i class="fas fa-sun"></i>
+      <span class="ball"></span>
+    </label>
+  </div>
     <div class="todo-container">
       <h1 id="heading"> MyTodo List</h1>
 
@@ -24,33 +35,11 @@
       </div>
 
       <div class="mid">
-        <!-- <div class="input-box">
-          <div class="img-flex">
-            <i class="fa-solid fa-file fa"></i>
-          </div>
-          <p>Brush my teeth</p>
-          <div class="twin">
-            <div><i class="fa-solid fa-circle-check fa" onclick="markDone(this)"></i></div>
-            <div><i class="fa-solid fa-trash fa"></i></div>
-          </div>
-        </div>
-
-        <div class="input-box">
-          <div class="img-flex">
-            <i class="fa-solid fa-file fa"></i>
-          </div>
-          <p>Make breakfast for myself</p>
-          <div class="twin">
-            <div><i class="fa-solid fa-circle-check fa" onclick="markDone(this)"></i></div>
-            <div><i class="fa-solid fa-trash fa"></i></div>
-          </div>
-        </div> -->
-
       </div>
 
       <div class="foot-box">
         <h5 id="total">Total Tasks: 0</h5>
-        <button class="del" onclick="deleteAll()">Delete </button>
+        <button class="del" onclick="deleteAll()">Delete All</button>
       </div>
 
     </div>
